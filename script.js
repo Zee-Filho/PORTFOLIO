@@ -1,22 +1,39 @@
-const display = document.getElementById("display");
-const buttons = document.querySelectorAll("input[type='button']");
+let [seconds, minutes, hours] = [0, 0, 0];
+let display = document.getElementById("display");
+let timer = null;
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const value = button.value;
+function updateDisplay() {
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+    display.innerText = `${h}:${m}:${s}`;
+}
 
-        if (value === "AC") {
-            display.value = "";
-        } else if (value === "DE") {
-            display.value = display.value.slice(0, -1);
-        } else if (value === "=") {
-            try {
-                display.value = eval(display.value);
-            } catch {
-                display.value = "Error";
-            }
-        } else {
-            display.value += value;
-        }
-    });
-});
+function stopwatch() {
+    seconds++;
+    if (seconds == 60) {
+        seconds = 0;
+        minutes++;
+    }
+    if (minutes == 60) {
+        minutes = 0;
+        hours++;
+    }
+    updateDisplay();
+}
+
+function start() {
+    if (timer !== null) return; // prevent multiple timers
+    timer = setInterval(stopwatch, 1000);
+}
+
+function stop() {
+    clearInterval(timer);
+    timer = null;
+}
+
+function reset() {
+    stop();
+    [seconds, minutes, hours] = [0, 0, 0];
+    updateDisplay();
+}
