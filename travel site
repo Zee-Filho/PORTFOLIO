@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel79655</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Travel79655</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to My Travel Blog</h2>
+      <p>Exploring the world, one destination at a time.</p>
+    </section>
+
+    <section class="posts">
+      <article>
+        <h3>Discovering the Andes</h3>
+        <p>A journey through the majestic mountains of Peru.</p>
+        <a href="#">Read More</a>
+      </article>
+      <article>
+        <h3>Amazon Rainforest Adventure</h3>
+        <p>Experiencing the vibrant biodiversity of the Amazon.</p>
+        <a href="#">Read More</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Travel79655</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
